@@ -10,8 +10,12 @@ runs:
     - name: Cache firebase emulators
       uses: actions/cache@v4
       with:
-        path: /home/runner/.cache/firebase/emulators
-        key: ${{ runner.os }}-firebase-emulators-${{ hashFiles('/home/runner/.cache/firebase/emulators/**') }}
+#        path: /home/runner/.cache/firebase/emulators
+#        key: ${{ runner.os }}-firebase-emulators-${{ hashFiles('/home/runner/.cache/firebase/emulators/**') }}
+        path: ~/.cache/firebase/emulators
+        key: ${{ runner.os }}-firebase-emulators-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-firebase-emulators-
       continue-on-error: true
 
     - name: Install Firebase Tools
