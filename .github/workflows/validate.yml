@@ -1,0 +1,13 @@
+name: Validate action.yml
+
+on:
+  push:
+
+jobs:
+
+  verify_action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run action.yml
+      - uses: ./action.yml
