@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run action.yml
-        uses: ./.github/actions/serve_emulators
+        uses: .
