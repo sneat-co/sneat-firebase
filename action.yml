@@ -1,0 +1,22 @@
+name: "Firebase emulators for Sneat.app"
+
+description: "Starts Firebase emulators for Sneat.app and its backend server"
+
+runs:
+  using: "composite"
+
+  steps:
+
+    - name: Cache firebase emulators
+      uses: actions/cache@v4
+      with:
+        path: /home/runner/.cache/firebase/emulators
+        key: ${{ runner.os }}-firebase-emulators-${{ hashFiles('/home/runner/.cache/firebase/emulators/**') }}
+      continue-on-error: true
+
+    - name: Install Firebase Tools
+      run: curl -sL https://firebase.tools | bash
+
+    - name: Run Firebase emulators
+      working-directory: "${{ github.action_path }}"
+      run: ./scripts/serve_fb_emulators.sh & sleep 10
