@@ -10,4 +10,4 @@ jobs:
 
     steps:
       - name: Run action.yml
-      - uses: ./action.yml
+      - uses: ./.github/actions/serve_emulators
