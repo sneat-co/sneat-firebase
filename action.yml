@@ -25,4 +25,4 @@ runs:
     - name: Run Firebase emulators
       shell: sh
       working-directory: "${{ github.action_path }}"
-      run: ./scripts/serve_fb_emulators.sh & sleep 10
+      run: ./scripts/serve_fb_emulators_ci.sh & sleep 10
